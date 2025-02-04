@@ -1,0 +1,380 @@
+@font-face {
+  font-family: "ClimateCrisisKR-1979";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/ClimateCrisisKR-2030.woff2")
+    format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ClimateCrisisKR-1979";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/ClimateCrisisKR-2040.woff2")
+    format("woff2");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Cafe24Simplehae";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: "Pretendard-Regular", sans-serif;
+  color: #412823;
+  background-color: #edece7;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  background-image: "/static/stockimages/background_paper.png !important !important";
+  background-size: cover;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body ::after {
+  background-image: "/static/stockimages/background_paper.png !important !important";
+  background-size: cover;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+}
+
+.overlay-content img {
+  width: 80%;
+  height: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 57px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f6f1 !important;
+  z-index: 100;
+  border-bottom: 1px solid #e6e1dc !important;
+  box-sizing: border-box;
+}
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 40vh;
+  background-color: #edece7;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  overflow: hidden;
+  /* background-color: yellowgreen; */
+}
+
+.color-selection {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
+  border: 1px solid #e6e1dc;
+  background-color: #f8f6f1;
+}
+
+#expressionTools {
+  position: relative;
+  width: 100%;
+  height: 53px; /* !important 적용 */
+  min-height: 53px;
+  max-height: 53px;
+
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+  z-index: 1000;
+  /* border-top: 1px solid #E6E1DC; */
+  border-bottom: 1px solid #e6e1dc;
+
+  /* background-color: red; */
+}
+
+.color-selection button {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-circle {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.small-circle {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  top: 5px;
+}
+
+.asset-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  border: 1px solid #e6e1dc;
+  background-color: #f8f6f1;
+
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: auto; /* IE and Edge */
+}
+
+.asset-grid::-webkit-scrollbar {
+  width: 1px; /* Width of the scrollbar */
+}
+
+.asset-grid.expanded {
+  display: flex !important;
+  aspect-ratio: 393 / 344 !important;
+  min-height: 290px;
+  gap: 0px !important;
+  padding: 0px !important;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.asset-grid .pictures {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #edece7;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.asset-grid .pictures img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
+}
+.category-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  box-sizing: border-box;
+  /* gap: 10px; */
+  background-color: #f8f6f1;
+  height: 58px !important;
+}
+
+.create-character-container {
+  position: relative;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e6e1dc;
+  background-color: #f8f6f1;
+}
+
+.create-character {
+  position: absolute;
+  width: 170px;
+  height: 35px;
+  background: #f8f6f1;
+  border: 1px solid #e6e1dc;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #412823;
+  cursor: pointer;
+}
+
+.titleArea {
+  font-family: "ClimateCrisisKR-1979";
+}
+
+.create-character:active {
+  background: #e9a7a7;
+  color: #e6e1dc;
+  border-color: #e6e1dc;
+}
+
+button {
+  -webkit-tap-highlight-color: #f8f6f1 !important; /* 모바일 터치 하이라이트 제거 */
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden !important;
+  height: calc(100vh - 58px);
+
+  background-image: "/static/stockimages/background_paper.png";
+  background-size: cover;
+
+  width: 100%;
+}
+
+/* Canvas should fill all available space but maintain aspect ratio */
+#ourcanvas {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 58px;
+  left: 0px;
+
+  box-sizing: border-box;
+
+  background-image: "/static/stockimages/background_paper.png";
+  background-size: cover;
+  z-index: 1000;
+}
+
+.controls {
+  z-index: 2000;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column-reverse;
+  min-height: 320px; /* 기본 최소 높이 */
+  transition: min-height 0.3s ease; /* 부드러운 높이 변화 */
+  height: auto; /* height를 auto로 설정해서 고정된 크기를 제거 */
+}
+
+.controls.head-active {
+  min-height: 380px; /* HEAD 상태일 때 */
+}
+
+.controls.expression-active {
+  min-height: 441px; /* EXPRESSION 상태일 때 */
+}
+
+.invitation-container #invitation-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 컨테이너에 맞게 이미지를 잘라서 채우기 */
+  object-position: center; /* 이미지의 중심을 유지 */
+}
+
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4개 열을 고정 */
+  grid-auto-rows: 1fr; /* 행의 크기를 자동으로 맞춤 */
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  height: auto;
+  box-sizing: border-box;
+  overflow-y: auto; /* 스크롤이 가능하게 설정 */
+}
+
+.asset-grid ::after {
+  width: 100%;
+  height: calc(50% + 10px); /* 50% 높이에 10px 추가 */
+}
+
+.asset-grid .pictures {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
+  border-radius: 18px;
+  background-color: #edece7;
+  overflow: hidden;
+}
+
+.asset-grid .pictures img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
+  object-fit: contain;
+  border-radius: 18px;
+}

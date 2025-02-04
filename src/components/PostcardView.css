@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Cafe24Simplehae";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  /* background-color: sandybrown !important; */
+  /* background-image: url("/static/stockimages/background_paper.png" )!important; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.upbutton {
+  /* 버튼 */
+
+  box-sizing: border-box;
+  height: 35px;
+  width: 40vw;
+
+  background: #f8f6f1;
+  border: 1px solid #e6e1dc;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+  color: #412823;
+  z-index: 1000;
+
+  font-size: 12px;
+}
+
+.upbutton:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+button:active:not(:disabled) {
+  background: #e9a7a7;
+  color: #e6e1dc;
+  border-color: #e6e1dc;
+}
+
+button:active {
+  background: #e9a7a7 !important; /* 우선순위 강제 */
+  color: #e6e1dc !important;
+  border-color: #e6e1dc !important;
+}

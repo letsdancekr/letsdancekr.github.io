@@ -1,0 +1,65 @@
+{
+  "name": "chpreact",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.6",
+    "@ffmpeg/ffmpeg": "^0.12.10",
+    "@ffmpeg/util": "^0.12.1",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "axios": "^1.7.7",
+    "canvas-capture": "^2.1.1",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg.js": "^4.2.9003",
+    "fix-webm-duration": "^1.0.6",
+    "gh-pages": "^6.3.0",
+    "gif.js": "^0.2.0",
+    "gifshot": "^0.4.5",
+    "libgif": "^0.0.3",
+    "nth-check": "^2.0.1",
+    "react": "^18.3.1",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "react-scripts": "^5.0.1",
+    "recordrtc": "^5.6.2",
+    "rollup": "^4.24.0",
+    "three": "^0.169.0",
+    "web-vitals": "^4.2.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "concurrently": "^9.0.1",
+    "file-loader": "^6.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-react": "react-scripts start",
+    "build": "react-scripts build",
+    "start-backend": " ",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "https://localhost:8000",
+  "homepage": "https://letsdancekr.github.io/"
+}

@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "ClimateCrisisKR-1979";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/ClimateCrisisKR-2030.woff2")
+    format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ClimateCrisisKR-1979";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/ClimateCrisisKR-2040.woff2")
+    format("woff2");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Cafe24Simplehae";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+}
+
+body {
+  font-family: "Pretendard-Regular", sans-serif;
+  color: #412823;
+  background-color: #f8f6f1;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  font-family: "Pretendard-Regular", sans-serif;
+}
+
+.App {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#headerLoader {
+  position: fixed;
+  /* left: 50%; */
+
+  width: 100% !important;
+  background-color: #f8f6f1;
+  height: 58px;
+  z-index: 100;
+}
+
+#mainheader {
+  position: absolute;
+  /* left: 50%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.titleArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  width: 100%;
+  background: transparent;
+}
+
+.container {
+  position: relative;
+  top: 58px;
+  /* flex-grow: 1; */
+  overflow-y: auto;
+  background-color: #f8f6f1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+#ajax-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.mainImage {
+  background-color: #f8f6f1;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+.image-grid {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  background-color: #f8f6f1;
+  z-index: 1100;
+}
+
+.image-item {
+  position: relative;
+  overflow: visible;
+  background-color: #f8f6f1;
+  display: block;
+  margin: 1px;
+  width: 95%;
+  left: 2.5%;
+  z-index: 1100;
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1100;
+}
+
+footer {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f6f1;
+  z-index: 1999;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* padding-top: 5px; */
+  /* padding-bottom: 5px; */
+}
+
+footer * {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2000;
+}
+
+#footer1 {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+#footer2 {
+  font-size: 8px;
+  font-weight: light;
+}
+
+.footerBorder {
+  font-size: 11px;
+}
+
+.floating {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4000;
+  background-size: cover;
+  background-position: center;
+}
+
+#mainBanner {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+#mainBanner.fade-out {
+  opacity: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:active,
+a:focus {
+  color: #f59191;
+}
+
+.invitation-container {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  transition: right 0.7s ease;
+}
+
+.invitation-container.visible {
+  right: 0;
+}
+
+.invitation-content {
+  height: 100%;
+  background-color: #f8f6f1;
+  overflow: hidden;
+}
+
+.invitation-content.slide-in {
+  transform: translateX(0);
+}
+
+#inv_text {
+  position: relative;
+  color: white;
+  font-family: "Cafe24Simplehae", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  padding: 20px;
+  z-index: 2000;
+  margin-top: 100px;
+}
+
+#letsmakedance {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+}
+
+#letsmakedance a {
+  display: inline-block;
+  width: 170px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  box-sizing: border-box;
+  background: #f8f6f1;
+  border: 1px solid #e6e1dc;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  color: inherit;
+}
+
+#letsmakedance a:hover,
+#letsmakedance a:active,
+#letsmakedance a:focus {
+  color: #f8f6f1;
+  background: #ed9a9a;
+  border: 1px solid #e6e1dc;
+}
