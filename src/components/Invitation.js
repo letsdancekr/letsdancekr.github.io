@@ -218,7 +218,7 @@ function Invitation({ onBack, showbutton = false }) {
               e.target.style.color = 'inherit';
             }}
           >
-            '함께 만드는 춤판' 이동하기
+            춤추러 갈 준비하기
           </a>
         </div>
       )}
