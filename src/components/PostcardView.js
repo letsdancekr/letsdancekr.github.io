@@ -630,19 +630,6 @@ const [ isReadyToRecord, setIsReadyToRecord ] = useState(true);
       <div ref={containerRef} style={containerStyle}>
         <canvas ref={canvasRef} style={canvasStyle} />
       </div>
-
-      <img
-        src="/static/stockimages/promotion.webp"
-        alt="Promotion"
-        style={{
-          position: 'fixed',
-          right: '5%',
-          bottom: '38px',
-          width: '70%',
-          height: 'auto',
-          zIndex: '1199900',
-        }}
-      />
       
       <div
         id="upbuttons"
