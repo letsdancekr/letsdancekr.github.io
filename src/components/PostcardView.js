@@ -619,7 +619,19 @@ const [ isReadyToRecord, setIsReadyToRecord ] = useState(true);
   style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingRight: '20px' }}
   onClick={() => window.open("https://letsdancekr.github.io/choompan/", "_blank")}
 >
-  <img src="/static/icons/gotomapbutton.png" alt="menu" id="menu-button" style={{width:'30px', height:'30px'}}/>
+  
+<img 
+  src="/static/icons/gotomapbutton.png" 
+  alt="menu" 
+  id="menu-button" 
+  style={{
+    width: '30px', 
+    height: '30px',
+    filter: 'drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5))'
+  }}
+/>
+
+
 </div>
 
 
