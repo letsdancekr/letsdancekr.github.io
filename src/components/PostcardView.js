@@ -615,9 +615,14 @@ const [ isReadyToRecord, setIsReadyToRecord ] = useState(true);
           {postcard?.name ? `'${postcard.name}'의 춤사위` : '춤사위'}
         </div>
 
-        <div style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingRight: '20px' }}>
-          <img src="/static/icons/hamburger.webp" alt="menu" id="menu-button" style={{width:'30px', height:'30px', opacity:'0'}}/>
-        </div>
+        <div 
+  style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingRight: '20px' }}
+  onClick={() => window.open("https://letsdancekr.github.io/choompan/", "_blank")}
+>
+  <img src="/static/icons/gotomapbutton.png" alt="menu" id="menu-button" style={{width:'30px', height:'30px'}}/>
+</div>
+
+
       </header>
 
       <audio ref={audioRef} src="/static/test.mp3" loop ></audio>

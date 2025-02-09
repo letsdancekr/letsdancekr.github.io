@@ -134,7 +134,7 @@ function Invitation({ onBack, showbutton = false }) {
               }}
             />
           </div>
-          <div style={{ fontSize: '20px' }}>춤 이야기</div>
+          <div style={{ fontSize: '20px' }}>이제 댄스타임 (2024)</div>
           <div style={{ width: '7%' }}></div>
         </div>
       </div>
@@ -168,7 +168,7 @@ function Invitation({ onBack, showbutton = false }) {
         }}
       >
         <img
-          src="/static/stockimages/invitext.webp"
+          src="/static/stockimages/invitext.png"
           alt="invitation text"
           style={{
             width: '100%',
@@ -218,7 +218,7 @@ function Invitation({ onBack, showbutton = false }) {
               e.target.style.color = 'inherit';
             }}
           >
-            캐릭터 생성하기
+            '함께 만드는 춤판' 이동하기
           </a>
         </div>
       )}
