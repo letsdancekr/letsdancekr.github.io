@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Invitation({ onBack, showbutton = false }) {
+function Invitation({ onBack, showbutton = false, isFinal = false }) {
   const [isSlideIn, setIsSlideIn] = useState(false);
   const [isImagesLoaded, setIsImagesLoaded] = useState(false);
 
@@ -161,9 +161,9 @@ function Invitation({ onBack, showbutton = false }) {
           justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
-          height: '60%',
+          height: '72%',
           zIndex: 999,
-          top: '-10%',
+          top: '-16%',
           position: 'relative',
         }}
       >
@@ -181,11 +181,11 @@ function Invitation({ onBack, showbutton = false }) {
       </div>
 
       {/* Button container */}
-      {showbutton && (
+      {showbutton && !isFinal && (
         <div
           style={{
             position: 'fixed',
-            bottom: '10%',
+            bottom: '5%',
             right: isSlideIn ? '0%' : '-150%',
             left: 0,
             zIndex: 999,
@@ -219,6 +219,48 @@ function Invitation({ onBack, showbutton = false }) {
             }}
           >
             춤추러 갈 준비하기
+          </a>
+        </div>
+      )}
+
+      {showbutton && isFinal && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '10%',
+            right: isSlideIn ? '0%' : '-150%',
+            left: 0,
+            zIndex: 999,
+            display: 'flex',
+            justifyContent: 'center',
+            transition: 'right 0.7s ease',
+          }}
+        >
+          <a
+            href="https://letsdancekr.github.io/choompan/ "
+            style={{
+              display: 'inline-block',
+              width: '200px',
+              height: '35px',
+              lineHeight: '35px',
+              textAlign: 'center',
+              boxSizing: 'border-box',
+              background: '#f8f6f1',
+              border: '1px solid #e6e1dc',
+              boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = '#ed9a9a';
+              e.target.style.color = '#f8f6f1';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = '#f8f6f1';
+              e.target.style.color = 'inherit';
+            }}
+          >
+            ‘함께 만드는 춤판' 이동하기
           </a>
         </div>
       )}

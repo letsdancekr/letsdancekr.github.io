@@ -588,6 +588,8 @@ const [ isReadyToRecord, setIsReadyToRecord ] = useState(true);
   
 
   return (
+
+
     <div style={{ 
       backgroundImage: `url('/static/stockimages/background_paper.webp')`, 
       backgroundSize: 'contain',
@@ -597,7 +599,7 @@ const [ isReadyToRecord, setIsReadyToRecord ] = useState(true);
       overflow: 'hidden' ,
       overflowY: 'hidden',  
       }}>
-      {isInvitationVisible && <Invitation onBack={handleBackClick} />}
+      {isInvitationVisible && <Invitation onBack={handleBackClick} isFinal={true} showbutton/>}
 
       <header
         style={{
@@ -633,7 +635,7 @@ const [ isReadyToRecord, setIsReadyToRecord ] = useState(true);
 
         <div 
   style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingRight: '20px' }}
-  onClick={() => window.open("https://letsdancekr.github.io/choompan/", "_blank")}
+  onClick={() => handleMenuClick()}
 >
   
 <img 
