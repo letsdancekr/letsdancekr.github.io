@@ -273,7 +273,7 @@ function Invitation({ onBack, showbutton = false, isFinal = false }) {
         <div
           style={{
             position: 'fixed',
-            bottom: '10%',
+            bottom: '5%',
             right: isSlideIn ? '0%' : '-150%',
             left: 0,
             zIndex: 999,
@@ -286,7 +286,7 @@ function Invitation({ onBack, showbutton = false, isFinal = false }) {
             href="https://letsdancekr.github.io/choompan/ "
             style={{
               display: 'inline-block',
-              width: '200px',
+              width: '280px',
               height: '35px',
               lineHeight: '35px',
               textAlign: 'center',
@@ -306,7 +306,7 @@ function Invitation({ onBack, showbutton = false, isFinal = false }) {
               e.target.style.color = 'inherit';
             }}
           >
-            ‘함께 만드는 춤판' 이동하기
+            ‘함께 만드는 춤판' 이동하기 (PC Only)
           </a>
         </div>
       )}
