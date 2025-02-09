@@ -76,16 +76,45 @@ function Invitation({ onBack, showbutton = false, isFinal = false }) {
           opacity: 1,
         }}
       >
+<img
+  src={isFinal ? "/static/stockimages/invitation_backgroud_final.png" : "/static/stockimages/invitation_background.webp"}
+  alt="background"
+  style={{
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    pointerEvents: 'none',
+  }}
+/>
+
+
+        {isFinal && (
         <img
-          src="/static/stockimages/invitation_background.webp"
-          alt="background"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            pointerEvents: 'none',
-          }}
-        />
+        src="/static/stockimages/invitext.png"
+        alt="invitation text"
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+          marginTop: '10%',
+          pointerEvents: 'none',
+        }}
+      />
+        )}
+
+  {!isFinal && (
+        <img
+        src="/static/stockimages/invitext-org.png"
+        alt="invitation text"
+        style={{
+          width: '100%',
+          height: '90%',
+          objectFit: 'contain',
+          marginTop: '10%',
+          pointerEvents: 'none',
+        }}
+      />
+        )}
       </div>
 
       {/* Header */}
@@ -167,17 +196,34 @@ function Invitation({ onBack, showbutton = false, isFinal = false }) {
           position: 'relative',
         }}
       >
+        {isFinal && (
         <img
-          src="/static/stockimages/invitext.png"
-          alt="invitation text"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain',
-            marginTop: '10%',
-            pointerEvents: 'none',
-          }}
-        />
+        src="/static/stockimages/invitext.png"
+        alt="invitation text"
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+          marginTop: '10%',
+          pointerEvents: 'none',
+        }}
+      />
+        )}
+
+  {!isFinal && (
+        <img
+        src="/static/stockimages/invitext-org.png"
+        alt="invitation text"
+        style={{
+          width: '100%',
+          height: '90%',
+          objectFit: 'contain',
+          marginTop: '10%',
+          pointerEvents: 'none',
+        }}
+      />
+        )}
+
       </div>
 
       {/* Button container */}
