@@ -198,7 +198,7 @@ function Invitation({ onBack, showbutton = false }) {
             href="/CreateCharacter"
             style={{
               display: 'inline-block',
-              width: '170px',
+              width: '200px',
               height: '35px',
               lineHeight: '35px',
               textAlign: 'center',

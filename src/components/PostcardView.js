@@ -373,6 +373,7 @@ function useRecord(canvasRef, isReadyToRecord = true)
   const [isRecording, setIsRecording] = useState(false);
   const [isRecordingDone, setIsRecordingDone] = useState(false);
   const [recordingBlob, setRecordingBlob] = useState(null);
+  const [isDownloadReady, setIsDownloadReady] = useState(false);
 
   const resetAndPlayAnimations = useAnimationPlay();
   
@@ -418,12 +419,21 @@ function useRecord(canvasRef, isReadyToRecord = true)
       setRecordingBlob(blob);
       setIsRecording(false);
       setIsRecordingDone(true);
+      setIsDownloadReady(true); 
       if (recorderRef.current) {
         recorderRef.current.destroy();
       }
+
+      console.log(isDownloadReady);
       
     });
   }
+
+  useEffect(() => {
+      setIsDownloadReady(true); // 녹화가 끝나면 다운로드 준비 완료 상태로 변경
+    
+  }, [isRecordingDone]);
+  
 
   useEffect( ()=>{
     return ()=>{
@@ -571,6 +581,12 @@ const [ isReadyToRecord, setIsReadyToRecord ] = useState(true);
     }
   };
 
+  useEffect(() => {
+    console.log("isRecordingDone:", isRecordingDone);
+    console.log("isDownloadReady:", isDownloadReady);
+  }, [isRecordingDone, isDownloadReady]);
+  
+
   return (
     <div style={{ 
       backgroundImage: `url('/static/stockimages/background_paper.webp')`, 
@@ -674,18 +690,18 @@ const [ isReadyToRecord, setIsReadyToRecord ] = useState(true);
         </>
       )}
 
-      {(isRecording || isRecordingDone) && !isDownloadReady && (
+      {(isRecording && !isRecordingDone)  && (
            <button className="upbutton" disabled={true} >
                   영상 준비 중..
           </button>
       )}
 
-      { isDownloadReady && (
+      { (!isRecording && isRecordingDone) && (
         <>
-          <button className="upbutton" onClick={downloadOrShareVideo} disabled={!isDownloadReady}>
+          <button className="upbutton" onClick={downloadOrShareVideo} >
             저장하기
           </button>
-          <button className="upbutton" onClick={shareVideo} disabled={!isDownloadReady}>
+          <button className="upbutton" onClick={shareVideo} >
            인스타그램 공유하기
           </button>
         </>
