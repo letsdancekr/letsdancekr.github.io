@@ -533,7 +533,7 @@ function Home( {isFixedSize}) {
       {/* Footer */}
 
       <footer style={{letterSpacing:'-0.025em'}}>
-        <div id="footer1">이 프로젝트는 2024년&nbsp;<a href="https://www.instagram.com/kkot.pida.gallery/">김화순 개인전</a>&nbsp;과 함께 진행되었습니다. </div>
+        <div id="footer1">이 프로젝트는 2024년&nbsp;<a href="https://www.instagram.com/kkot.pida.gallery/">김화순 개인전</a>과 함께 진행되었습니다. </div>
         <div id="footer2">
         <div>2024. 10. 12 - 11. 3&nbsp;</div>
         <a href="https://www.zahamuseum.org">자하미술관</a>
